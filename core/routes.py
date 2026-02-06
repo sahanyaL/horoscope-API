@@ -14,11 +14,9 @@ ZODIAC_SIGNS = {
 
 ns = api.namespace('/', description='Horoscope APIs')
 
-# This parser is for Weekly/Monthly (only needs 'sign')
 parser = reqparse.RequestParser()
 parser.add_argument('sign', type=str, required=True, help="Zodiac sign is required")
 
-# This parser is for Daily (needs 'sign' AND 'day')
 parser_copy = parser.copy()
 parser_copy.add_argument('day', type=str, required=True, help="Day is required (today, tomorrow, or YYYY-MM-DD)")
 
